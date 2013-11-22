@@ -32,6 +32,7 @@
         </resources>
         <events>
             <!-- Debugging observer -->
+            <!--
             <controller_front_init_before>
                 <observers>
                     <brandturnover>
@@ -41,7 +42,6 @@
                     </brandturnover >
                 </observers>
             </controller_front_init_before>
-            <!--
             -->
             <!-- Observe the new order creation -->
             <sales_order_save_commit_after>
