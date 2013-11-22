@@ -6,11 +6,11 @@ class MobWeb_BrandTurnover_Model_Observer
     // of each purchased product to the brand specific turnover for this
     // brand to the customer object. It then checks if any brand turnover
     // has now reached its limit specified by the admin
-    //public function captureOrderSave(Varien_Event_Observer $observer)
-    public function captureOrderSave()
+    public function captureOrderSave(Varien_Event_Observer $observer)
+    //public function captureOrderSave()
     {
-		//$order = $observer->getEvent()->getOrder();
-		$order = Mage::getModel('sales/order')->load(41);
+		$order = $observer->getEvent()->getOrder();
+		//$order = Mage::getModel('sales/order')->load(41);
 
 		// Check if the order is in the "Complete" state. If not, abort
 		if($order->getState() !== Mage_Sales_Model_Order::STATE_COMPLETE) {
