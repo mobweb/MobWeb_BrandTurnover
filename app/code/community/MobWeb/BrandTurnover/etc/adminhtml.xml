@@ -10,7 +10,7 @@
                         <children>
                             <config>
                                 <children>
-                                    <brandturnover translate="title" module="referalcoupon">
+                                    <brandturnover translate="title" module="brandturnover">
                                         <title>Brand Turnover</title>
                                     </brandturnover>
                                 </children>
