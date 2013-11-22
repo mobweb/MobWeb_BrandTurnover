@@ -1,0 +1,6 @@
+app/code/community/MobWeb/BrandTurnover app/code/community/MobWeb/BrandTurnover/
+
+app/etc/modules/MobWeb_BrandTurnover.xml app/etc/modules/MobWeb_BrandTurnover.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"

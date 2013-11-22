@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_BrandTurnover>
+            <version>0.1.0</version>
+        </MobWeb_BrandTurnover>
+    </modules>
+    <global>
+        <models>
+            <brandturnover>
+                <class>MobWeb_BrandTurnover_Model</class>
+            </brandturnover>
+            <brandturnover_adminhtml>
+              <class>MobWeb_BrandTurnover_Adminhtml_Model</class>
+            </brandturnover_adminhtml>
+        </models>
+        <helpers>
+            <brandturnover>
+                <class>MobWeb_BrandTurnover_Helper</class>
+            </brandturnover>
+        </helpers>
+        <resources>
+            <brandturnover_setup>
+                <setup>
+                    <module>MobWeb_BrandTurnover</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </brandturnover_setup>
+        </resources>
+        <events>
+            <!-- Debugging observer -->
+            <controller_front_init_before>
+                <observers>
+                    <brandturnover>
+                        <class>brandturnover/observer</class>
+                        <method>captureOrderSave</method>
+                        <type>singleton</type>
+                    </brandturnover >
+                </observers>
+            </controller_front_init_before>
+            <!--
+            -->
+            <!-- Observe the new order creation -->
+            <sales_order_save_commit_after>
+                <observers>
+                    <brandturnover>
+                        <class>brandturnover/observer</class>
+                        <method>captureOrderSave</method>
+                        <type>singleton</type>
+                    </brandturnover>
+                </observers>
+            </sales_order_save_commit_after>
+        </events>
+    </global>
+</config>
