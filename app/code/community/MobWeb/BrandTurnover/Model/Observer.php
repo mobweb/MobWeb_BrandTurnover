@@ -48,8 +48,8 @@ class MobWeb_BrandTurnover_Model_Observer
 
 				// Check if the attribute exists
 				if(!$brand) {
-					Mage::helper('brandturnover')->log('Unable to load brand attribute by specified attribute code: ' . $attribtue_code);
-					return;
+					Mage::helper('brandturnover')->log('Unable to load brand attribute by specified attribute code: ' . $attribute_code);
+					continue;
 				}
 
 				// If no brand specific turnover exists for this brand,
