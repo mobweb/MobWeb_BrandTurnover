@@ -15,7 +15,7 @@ $installer->addAttribute(
 	'mobweb_brandturnover_turnover',
 	array(
 		'group' => 'Default',
-		'type' => 'varchar',
+		'type' => 'text',
 		'label' => 'Brand Specific Turnover (Serialized Array)',
 		'input' => 'text',
 		'required' => 0,
